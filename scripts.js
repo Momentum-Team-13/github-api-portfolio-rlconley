@@ -13,6 +13,15 @@ fetch(gitHubUrl, {
     })
     .then(function (data) {
         // data refers to what the above promise returned (response.json())
-        console.log("Response from GitHub API: ", data)
+        console.log("Response from GitHub API: ", data.name)
         // console log the data
+        buildProfile(data)
+
     })
+
+function buildProfile(profileData) {
+    console.log(profileData)
+    // create elements and add them to the page
+    // profileData is the data from the promise
+}
+
