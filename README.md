@@ -32,6 +32,10 @@ https://api.github.com/users/your-username-here
 Note that
 
 In your HTML you will need a basic structure to add onto with the JS code. Once you have some HTML in place, begin setting up your AJAX calls and the callback functions to work with the data you retrieve. Don't forget to console.log the data to check what you're getting back.
+Asynchronous
+JavaScript
+And
+XML
 
 Insomnia will be helpful to test the AJAX calls as you get started.
 
