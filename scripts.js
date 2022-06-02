@@ -16,11 +16,11 @@ fetch(gitHubUrl, {
     .then(function (data) {
         // data refers to what the above promise returned (response.json())
         // console log the data
-        buildProfile(data)
+        buildRepos(data)
 
     })
 
-function buildProfile(profileData) {
+function buildRepos(repoData) {
     profileData.map(function (repo) {
         profile.appendChild(buildRepoElement(repo.name))
     })
@@ -28,8 +28,8 @@ function buildProfile(profileData) {
     // profileData is the data from the promise
 }
 
-function buildProfileLoop(profileData) {
-    // equivalent to buildProfile but uses loops
+function buildReposLoop(profileData) {
+    // equivalent to buildRepos but uses loops
 
     for (let repo of profileData) {
         profile.appendChild(buildRepoElement(repo.name))
