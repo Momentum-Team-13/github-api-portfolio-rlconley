@@ -1,6 +1,9 @@
 console.log('js is connected!')
 
-let gitHubUrl = "https://api.github.com/users/rlconley"
+let profile = document.querySelector('#profile')
+
+let gitHubUrl = "https://api.github.com/users/rlconley/repos"
+// url to get my repos
 
 fetch(gitHubUrl, {
     method: 'GET',
@@ -13,15 +16,22 @@ fetch(gitHubUrl, {
     })
     .then(function (data) {
         // data refers to what the above promise returned (response.json())
-        console.log("Response from GitHub API: ", data.name)
         // console log the data
         buildProfile(data)
 
     })
 
 function buildProfile(profileData) {
-    console.log(profileData)
+    profileData.map(function (repo) {
+        profile.appendChild(buildRepoElement(repo.name))
+    })
     // create elements and add them to the page
     // profileData is the data from the promise
 }
 
+function buildRepoElement(name) {
+    let el = document.createElement('p')
+    el.innerText = name;
+    return el
+    // returns a new element for a repo, like a customer
+}
